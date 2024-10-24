@@ -1,5 +1,5 @@
 <?php 
-include 'header.php';
+include '../header.php';
 addUser();
 ?>
 <body>
@@ -13,5 +13,5 @@ addUser();
     </form>
 </body>
 <?php 
-include 'footer.php';
+include '../footer.php';
 ?>

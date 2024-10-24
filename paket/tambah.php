@@ -1,23 +1,17 @@
 <?php 
-include 'header.php';
-if(isset($_GET['user_id'])) {
-    $user_id = $_GET['user_id'];
-    $providers = takeProvider($user_id);
-} else {
-    header('Location: index.php');
-    exit;
-}
+include '../header.php';
 addPaket();
+$nomors = getNomor();
 ?>
 <body>
-<form action="tambah_paket.php?user_id=<?php echo $user_id; ?>" method="POST">
-    <input type="hidden" name="user_id" value="<?php echo $_GET['user_id']; ?>">
-
-    <select name="nomor_id">
-        <?php foreach($providers as $provider) : ?>
-        <option value="<?php echo $provider['id']; ?>"><?php echo $provider['provider']; ?></option>
-        <?php endforeach; ?>
-    </select>
+<form method="POST">
+    <label for="nomor_id">Nomor:</label>
+        <select name="nomor_id" id="nomor_id">
+            <option value="">Pilih Nomor</option>
+            <?php foreach ($nomors as $nomor): ?>
+                <option value="<?= $nomor['id']; ?>" <?php echo $nomor['id'] ? 'selected' : ''; ?>><?= $nomor['nomor']; ?></option>
+            <?php endforeach; ?>
+        </select>
 
     <label for="nama_paket">Nama Paket:</label>
     <input type="text" name="nama_paket" id="nama_paket"><br>
@@ -35,9 +29,9 @@ addPaket();
     <input type="number" name="harga" id="harga"><br>
 
     <button type="submit" name="submit">Tambah Paket</button>
-    <a href="pulsa.php?user_id=<?php echo $_GET['user_id']; ?>">Kembali</a>
+    <a href="index.php">Kembali</a>
 </form>
 </body>
 <?php 
-include 'header.php';
+include '../footer.php';
 ?>

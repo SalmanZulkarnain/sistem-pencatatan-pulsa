@@ -1,9 +1,10 @@
 <?php 
-include 'header.php';
+include '../header.php';
 deleteUser();
 ?>
 <body>
-    <a href="tambah_user.php">Tambah User</a>
+    <a href="tambah.php">Tambah User</a>
+    <a href="../nomor/index.php">Nomor</a>  
     <table border=1 cellspacing=0 cellpadding=10>
         <thead>
             <tr>
@@ -18,9 +19,8 @@ deleteUser();
             <tr>
                 <td><?php echo $no; ?></td>
                 <td><?php echo $user['nama']; ?></td>
-                <td><a href="index.php?hapus=<?php echo $user['id']; ?>" onclick="return confirm('Yakin ingin menghapus user ini?')">Hapus</a> |
-                    <a href="edit_user.php?id=<?php echo $user['id']; ?>">Edit</a> | 
-                    <a href="nomor.php?user_id=<?php echo $user['id']; ?>">Detail</a>
+                <td><a href="index.php?id=<?php echo $user['id']; ?>" onclick="return confirm('Yakin ingin menghapus user ini?')">Hapus</a> |
+                    <a href="edit.php?id=<?php echo $user['id']; ?>">Edit</a> 
                 </td>
             </tr>
                 <?php $no++; endforeach; ?>
@@ -29,5 +29,5 @@ deleteUser();
     </table>
 </body>
 <?php 
-include 'footer.php';
+include '../footer.php';
 ?>

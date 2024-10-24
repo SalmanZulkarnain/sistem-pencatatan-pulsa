@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include '../header.php';
 getEdit();
 updateUser();
 ?>
@@ -16,5 +16,5 @@ updateUser();
     </form>
 </body>
 <?php 
-include 'footer.php';
+include '../footer.php';
 ?>
