@@ -82,3 +82,20 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar {
+    display: inline-block;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.say-hello {
+    text-align: center;
+}
